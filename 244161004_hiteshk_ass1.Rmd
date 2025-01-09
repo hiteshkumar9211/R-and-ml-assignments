@@ -185,15 +185,27 @@ print("incase of height it ranges 145 to 155 ,and in case of weight it ranges fr
 
 
 ```{r}
-#n 
+#n writing a pre- existing dataframe into a csv file 
+write.csv(hwdf,"/home/a.gond/ASS1/data.csv",row.names = FALSE)
 ```
 
 
 ```{r}
+#o reading and getting csv
+data <- read.csv("data.csv",sep =",")
+head(data,10)
 ```
-
-
 ```{r}
+#5.
+getmode <- function(v){
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v,uniqv)))]
+}
+hmode <- getmode(height)
+wmode <- getmode(weight)
+print(wmode)
+cat("\n")
+print(hmode)
 ```
 
 
