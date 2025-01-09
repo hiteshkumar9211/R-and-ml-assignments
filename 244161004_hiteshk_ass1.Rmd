@@ -1,0 +1,212 @@
+---
+title: "244161004_HItesh"
+output: pdf_document
+date: "2025-01-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+#Ques1 .a
+name <- "Hitesh Kumar"
+print(name)
+cat("\n")
+roll <- 244161004
+print(roll)
+#b 
+if (roll %% 2 == 0){
+  cat("\n")
+  print("even")
+}else {
+  cat("\n")
+  print("odd")
+}
+```
+
+```{r}
+#Q2.
+x <- c(seq(11,56,by=2))
+print(x)
+print(mean(x))
+print(var(x))
+print(sd(x))
+```
+
+
+```{r}
+#Q2 density plot
+plot(density(x))
+
+```
+
+`
+```{r}
+#Q3.
+x <- rnorm(12)
+y <- rnorm(53)
+z <- c(x,y)
+print(z)
+```
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+#Q4.
+#a.
+height <- rnorm(100,mean = 150,sd=3.16)
+print(height)
+```
+```{r}
+#b.
+weight <- rnorm(100,mean = 70,sd = 7.07)
+print(weight)
+```
+```{r}
+#c.
+hwdf = data.frame(height,weight)
+print(hwdf)
+```
+```{r}
+#d.
+print(dim(hwdf))
+```
+```{r}
+#e.
+print(str(hwdf))
+```
+```{r}
+#f
+#first 15 rows
+head(hwdf,15)
+```
+
+
+```{r}
+#f last 13 rows
+tail(hwdf,13)
+```
+
+
+```{r}
+#h
+h1 <- subset(hwdf ,select = 1)
+print(h1)
+```
+
+
+```{r}
+#i 
+h170 <- hwdf[hwdf$height>170,]
+print(h170)
+```
+```{r}
+#j
+w45 <- hwdf[hwdf$weight<45,]
+print(w45)
+```
+```{r}
+#k
+hw1 <- hwdf[hwdf$height>160,hwdf$weight>90]
+head(hw1,10)
+```
+```{r}
+#l
+hw2 <- hwdf[hwdf$height<150 & hwdf$weight>80,]
+print(hw2)
+```
+
+
+```{r}
+#m
+#scatter plot 
+pairs(~weight+height,data=hwdf,main="scatterplot matrix of height and width")
+```
+
+
+```{r}
+#m 
+print("Height column ranges from 145 to 155 ,below and above it are outliers")
+```
+
+
+```{r}
+#m
+#boxplot  plot between columns.
+
+data(hwdf)
+
+boxplot(hwdf$weight, hwdf$height, 
+        names = c("Weight", "Height"), 
+        main = "Boxplot of Weight and Height", 
+        ylab = "Values", 
+        col = c("lightblue", "lightgreen"))
+
+```
+```{r}
+#m histrogram of every column in hwdf
+# Histogram for Weight
+hist(hwdf$weight, 
+     main = "Histogram of Weight", 
+     xlab = "Weight", 
+     ylab = "Count", 
+     col = "lightblue", 
+     border = "black", 
+     breaks = 10)  # Adjust breaks as needed
+
+# Histogram for Height
+hist(hwdf$height, 
+     main = "Histogram of Height", 
+     xlab = "Height", 
+     ylab = "Count", 
+     col = "lightgreen", 
+     border = "black", 
+     breaks = 10) 
+
+```
+
+
+```{r}
+#m 
+print("incase of height it ranges 145 to 155 ,and in case of weight it ranges from 55 to 85")
+```
+
+
+```{r}
+#n 
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
